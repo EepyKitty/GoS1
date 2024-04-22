@@ -16,3 +16,10 @@ If it is required to rebuild the parser for any reason it can be done as follows
 2. Compile the parser using `GOOS=js GOARCH=wasm go build -o parser.wasm parser.go`. Note that this will require a relatively recent version of Go.
 
 The javascript file doesn't need any building.
+
+## Testing Instructions
+There are 7 automated tests and 2 manual tests. The 7 automated tests can be run by going into the tests directory (required) and running `./tests.sh`. You may need to give the file execute permission by doing `chmod +x ./tests.sh`. There is no automated test suite for windows, but they can be run manually and compared.
+
+The 2 manual tests cannot be automated simply. They are:
+1. A test for goroutines. This file simply calls a goroutine 3 times in order to trigger a race condition. Test is successful if output is varied after a few runs.
+2. A test for the `panic` builtin. Test is successful if there is an error with an appropriate error message.
