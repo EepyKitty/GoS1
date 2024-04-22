@@ -4,9 +4,9 @@ Project was tested and built using:
 - go version 1.22.2
 
 ## Usage
-After cloning the repository, you can place any source files in the same folder and run using
-`node go-slang.js <source-program.go`
-Note you have to be in the same folder since the program requires `wasm_exec.js`
+After cloning the repository, you can run as follows.
+`node go-slang.js <path/to/source.go>`
+Note you have to be in the same folder since the program requires `wasm_exec.js`, but the source file can be anywhere.
 
 ## Build Instructions 
 The only part of the project that needs to be built is the parser. Since the wasm file is included this isn't necessary.
